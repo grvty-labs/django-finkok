@@ -32,5 +32,6 @@ service for sending invoices to the mexican treasury (SAT)',
     zip_safe=False,
     install_requires=[
         'suds-jurko',
+        'lxml',
     ],
 )
