@@ -39,7 +39,7 @@ Release Notes
 Disclaimer
 ---------
 
-The code developed for this project is used for GRVTYlabs' projects. If you
+The code developed for this repository is used for GRVTYlabs' projects. If you
 wish to know more about one of the projects which uses this library, please
 visit: [FacturaBot](www.facturabot.com)
 
@@ -47,7 +47,13 @@ GRVTYlabs uses this code in the best possible manner, without trying to
 affect the users nor any related party, any bug which does affect the users
 will be patched but is unintentional.
 
+The code in this repository is being checked continuously, and any user whom
+tries to generate an exploit in a pull-request will not be tolerated. This
+package manages sensitive information, please respect that.
+
 Owned and developed by
 --------
 
-[GRVTYlabs](www.grvtylabs.com)
+[![GRVTYlabs][logo]](www.grvtylabs.com)
+
+[logo]: https://github.com/letops/django-finkok/logo.png "GRVTYlabs"
