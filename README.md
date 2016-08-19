@@ -25,7 +25,8 @@ Installation
 ------------
 
 Before installing this package, make sure your development and production
-systems are compatible with the library `suds-jurko`.
+systems are compatible with the libraries `suds-jurko` and `lxml`, as this
+application will not work without them.
 
 **Not available in pip yet, wait for version 0.3**
 
@@ -56,4 +57,4 @@ Owned and developed by
 
 [![GRVTYlabs][logo]](www.grvtylabs.com)
 
-[logo]: https://github.com/letops/django-finkok/logo.png "GRVTYlabs"
+[logo]: https://github.com/letops/django-finkok/blob/master/logo.png?raw=true "GRVTYlabs"
