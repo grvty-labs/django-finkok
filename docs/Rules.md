@@ -7,8 +7,14 @@ a REGEX format to specify some types of the data expected by each variable.
 In case you can't read the following list, please refer to the file
 [Anexo20](https://github.com/letops/django-finkok/blob/master/docs/Anexo20RMF2014.doc?raw=true)
 
+Although the rules are written in a json type object, you should remember that
+it isn't a json object. This is because some objects can repeat themselves many
+times in the same tree or branch.
+
 ```javascript
 // ? means optional, if not marked as optional, then it is required.
+// * means multiple, if marked with this symbol, than the object can repeat
+//    itself multiple times.
 // Remember, use the cfdi and tfd as objects, this means you should nest them
 //   not use them as attributes.
 
@@ -36,7 +42,7 @@ Comprobante = {
   TipoDeComprobante: '[ingreso|egreso|traslado]',  // What does this represent
                                                    // for the transmitter
   TipoCambio: '.*',  // ? // e.g. 1.00
-  Total: '\d+\.\d{2}', // subTotal - Descuentos + Trasladados - Retenidos
+  Total: '\d+\.\d{2}', // Subtotal - Descuentos + Trasladados - Retenidos
                       // Or cfdi:t_Importe
 
   /*
@@ -48,78 +54,90 @@ Comprobante = {
   */
 
   'cfdi:Emisor': {
-    rfc
-    nombre
-    'cfdi:DomicilioFiscal': {
-      calle
-      noExterior
-      noInterior
-      colonia
-      localidad
-      referencia
-      municipio
-      estado
-      pais
-      codigoPostal
+    rfc: '[a-zA-Z0-9]*',  // Or cfdi:t_RFC
+    nombre: '.+',  // ?
+    'cfdi:DomicilioFiscal': {  // ?  // Or cfdi:t_UbicacionFiscal
+      calle: '.+',
+      noExterior: '.*',  // ?
+      noInterior: '.*',  // ?
+      colonia: '.*',  // ?
+      localidad: '.*',  // ?
+      referencia: '.*',  // ?
+      municipio: '.+',
+      estado: '.+',
+      pais: '.+',
+      codigoPostal: '.+',
     },
-    'cfdi:ExpedidoEn': {
-        calle
-        noExterior
-        noInterior
-        colonia
-        municipio
-        estado
-        pais
-        codigoPostal
+    'cfdi:ExpedidoEn': {  // ?  // Or cfdi:t_Ubicacion
+      calle: '.*',  // ?
+      noExterior: '.*',  // ?
+      noInterior: '.*',  // ?
+      colonia: '.*',  // ?
+      localidad: '.*',  // ?
+      referencia: '.*',  // ?
+      municipio: '.*',  // ?
+      estado: '.*',  // ?
+      pais: '.+',
+      codigoPostal: '.*',  // ?
     },
     'cfdi:RegimenFiscal': {
-      Regimen  
+      Regimen: '.+',
     },
   },
-  cfdi:Receptor
-      rfc
-      nombre
-      cfdi:Domicilio
-          calle
-          noExterior
-          noInterior
-          colonia
-  -         localidad
-          municipio
-          estado
-          pais
-          codigoPostal
 
-  cfdi:Conceptos
-      cfdi:Concepto
-          cantidad
-          unidad
-          descripcion
-          valorUnitario
-          importe
+  'cfdi:Receptor': {
+    rfc: '[a-zA-Z0-9]*',  // Or cfdi:t_RFC
+    nombre: '.+',  // ?
+    'cfdi:Domicilio': {  // ?  // Or cfdi:t_Ubicacion
+      calle: '.*',  // ?
+      noExterior: '.*',  // ?
+      noInterior: '.*',  // ?
+      colonia: '.*',  // ?
+      localidad: '.*',  // ?
+      referencia: '.*',  // ?
+      municipio: '.*',  // ?
+      estado: '.*',  // ?
+      pais: '.+',
+      codigoPostal: '.*',  // ?
+    },
+  },
+  'cfdi:Conceptos': {
+    'cfdi:Concepto': {
+      cantidad: Decimal,
+      unidad: '.+',
+      noIdentificacion: '.+',  // ?
+      descripcion: '.+',
+      valorUnitario: '\d+\.\d{2}',  // Or cfdi:t_Importe
+      importe: '\d+\.\d{2}',  // Or cfdi:t_Importe.
+                              // cantidad * valorUnitario
+
+      cfdi:InformacionAduanera
+    },
+    // 'cfdi:Concepto': {},
+  },
 
   cfdi:Impuestos
-      totalImpuestosTrasladados
-      cfdi:Traslados
-          cfdi:Traslado
-              impuesto
-              tasa
-              importe
+    totalImpuestosTrasladados
+    cfdi:Traslados
+      cfdi:Traslado
+          impuesto
+          tasa
+          importe
 
-  cfdi:Complemento
-  -     xmlns:cfdi
-      tfd:TimbreFiscalDigital
-          xmlns:tfd
-  -        xmlns:xsi
-          xsi:schemaLocation
-          version
-          UUID
-          FechaTimbrado
-          selloCFD
-          noCertificadoSAT
-          selloSAT
+  cfdi:Complemento  // ?
+    xmlns:cfdi
+    tfd:TimbreFiscalDigital
+      xmlns:tfd
+      xmlns:xsi
+      xsi:schemaLocation
+      version
+      UUID
+      FechaTimbrado
+      selloCFD
+      noCertificadoSAT
+      selloSAT
 
-  - cfdi:Addenda
+  cfdi:Addenda  // ?
 
 };
 ```
