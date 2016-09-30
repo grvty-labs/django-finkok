@@ -57,7 +57,7 @@ Owned and developed by
 
 [![StackShare][stack-shield]][stack-tech]
 
-[![GRVTYlabs][logo]](www.grvtylabs.com)
+[![GRVTYlabs][logo]](https://www.grvtylabs.com)
 
 
 [logo]: https://github.com/grvty-labs/django-finkok/blob/master/logo.png?raw=true "GRVTYlabs"
