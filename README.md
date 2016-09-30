@@ -52,7 +52,7 @@ The code in this repository is being checked continuously, and any user whom
 tries to generate an exploit in a pull-request will not be tolerated. This
 package manages sensitive information, please respect that.
 
-Owned and developed by
+Owned and developed by 
 --------
 
 [![GRVTYlabs][logo]](www.grvtylabs.com)
