@@ -42,7 +42,7 @@ Disclaimer
 
 The code developed for this repository is used for GRVTYlabs' projects. If you
 wish to know more about one of the projects which uses this library, please
-visit: [FacturaBot](www.facturabot.com)
+visit: [FacturaBot](http://www.facturabot.com)
 
 GRVTYlabs uses this code in the best possible manner, without trying to
 affect the users nor any related party, any bug which does affect the users
@@ -57,7 +57,7 @@ Owned and developed by
 
 [![StackShare][stack-shield]][stack-tech]
 
-[![GRVTYlabs][logo]](https://www.grvtylabs.com)
+[![GRVTYlabs][logo]](http://www.grvtylabs.com)
 
 
 [logo]: https://github.com/grvty-labs/django-finkok/blob/master/logo.png?raw=true "GRVTYlabs"
