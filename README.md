@@ -1,5 +1,5 @@
-django-finkok
-=============
+**django-finkok**
+=================
 
 Simple django application to integrate the FINKOK service for sending
 invoices to the mexican treasury (SAT).
@@ -40,13 +40,13 @@ Release Notes
 Disclaimer
 ---------
 
-The code developed for this repository is used for GRVTYlabs' projects. If you
+The code developed for this repository is for GRVTY's projects. If you
 wish to know more about one of the projects which uses this library, please
-visit: [FacturaBot](www.facturabot.com)
+visit: [FacturaBot](http://www.facturabot.com)
 
-GRVTYlabs uses this code in the best possible manner, without trying to
+GRVTY uses this code in the best possible manner, without trying to
 affect the users nor any related party, any bug which does affect the users
-will be patched but is unintentional.
+is unintentional and will be fixed as soon as possible.
 
 The code in this repository is being checked continuously, and any user whom
 tries to generate an exploit in a pull-request will not be tolerated. This
@@ -55,6 +55,11 @@ package manages sensitive information, please respect that.
 Owned and developed by
 --------
 
-[![GRVTYlabs][logo]](www.grvtylabs.com)
+[![StackShare][stack-shield]][stack-tech]
 
-[logo]: https://github.com/letops/django-finkok/blob/master/logo.png?raw=true "GRVTYlabs"
+[![GRVTY][logo]](http://grvty.digital)
+
+
+[logo]: http://grvty.digital/images/logos/repos-logo-1.png?raw=true "GRVTY"
+[stack-shield]: http://img.shields.io/badge/tech-stack-0690fa.svg?style=flat
+[stack-tech]: http://stackshare.io/grvty/grvty

@@ -12,9 +12,9 @@ setup(
 service for sending invoices to the mexican treasury (SAT)',
     long_description=readme,
     # long_description=read("README.md"),
-    author='GRVTYlabs',
+    author='GRVTY',
     author_email='daniel.ortiz@grvtylabs.com',
-    url='https://github.com/letops/django-finkok',
+    url='https://github.com/grvty-labs/django-finkok',
     packages=find_packages(),
     license='MIT',
     classifiers=[
@@ -32,5 +32,6 @@ service for sending invoices to the mexican treasury (SAT)',
     zip_safe=False,
     install_requires=[
         'suds-jurko',
+        'lxml',
     ],
 )
