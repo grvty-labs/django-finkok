@@ -5,7 +5,7 @@ Please use the following format to build the XMLs to be used for the SAT. The
 following list is case sensitive, so thread lightly to prevent errors. I used
 a REGEX format to specify some types of the data expected by each variable.
 In case you can't read the following list, please refer to the file
-[Anexo20](https://github.com/letops/django-finkok/blob/master/docs/Anexo20RMF2014.doc?raw=true)
+[Anexo20](https://github.com/grvty-labs/django-finkok/blob/master/docs/Anexo20RMF2014.doc?raw=true)
 
 Although the rules are written in a json type object, you should remember that
 it isn't a json object. This is because some objects can repeat themselves many
